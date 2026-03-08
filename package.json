@@ -1,5 +1,5 @@
 {
-  "name": "@telegraphic-dev/n8n-giga-mango",
+  "name": "@telegraphic-dev/n8n-nodes-giga-mango",
   "version": "0.1.0",
   "description": "n8n community node for social media management",
   "keywords": [
