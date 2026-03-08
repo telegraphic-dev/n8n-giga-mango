@@ -1,5 +1,5 @@
 {
-  "name": "@telegraphic-dev/n8n-giga-mango",
+  "name": "n8n-nodes-giga-mango",
   "version": "0.1.0",
   "description": "n8n community node for social media management",
   "keywords": [
@@ -18,7 +18,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "tsc && npm run copy-icons",
+    "build": "npx tsc && npm run copy-icons",
     "copy-icons": "cp nodes/Agorapulse/*.svg dist/nodes/Agorapulse/ 2>/dev/null || true",
     "dev": "tsc --watch",
     "prepublishOnly": "npm run build"
