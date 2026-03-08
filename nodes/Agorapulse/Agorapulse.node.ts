@@ -170,9 +170,11 @@ export class Agorapulse implements INodeType {
 				name: 'postType',
 				type: 'options',
 				options: [
-					{ name: 'Standard', value: 'STANDARD' },
-					{ name: 'Reel', value: 'REEL' },
-					{ name: 'Story', value: 'STORY' },
+					{ name: 'Text', value: 'TEXT' },
+					{ name: 'Photo', value: 'PHOTO' },
+					{ name: 'Video', value: 'VIDEO' },
+					{ name: 'Photo and Video', value: 'PHOTO_AND_VIDEO' },
+					{ name: 'Link', value: 'LINK' },
 				],
 				displayOptions: {
 					show: { resource: ['simpleDraft', 'scheduledPost'], operation: ['create'] },
@@ -326,7 +328,7 @@ export class Agorapulse implements INodeType {
 
 						const body: IDataObject = {
 							text,
-							type: { type: postType },
+							type: postType,
 							scheduling: profileUids.map(uid => ({ profileUid: uid })),
 						};
 
@@ -356,7 +358,7 @@ export class Agorapulse implements INodeType {
 
 						const body: IDataObject = {
 							text,
-							type: { type: postType },
+							type: postType,
 							scheduling: profileUids.map(uid => ({ 
 								profileUid: uid,
 								publishingDate: scheduledTime,
