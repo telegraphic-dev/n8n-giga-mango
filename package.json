@@ -1,11 +1,15 @@
 {
   "name": "n8n-nodes-giga-mango",
-  "version": "0.1.0",
-  "description": "n8n community node for social media management",
+  "version": "0.2.0",
+  "description": "n8n community nodes for Agorapulse and ClawBuddy publication subscriptions",
   "keywords": [
     "n8n-community-node-package",
     "social-media",
-    "publishing"
+    "publishing",
+    "clawbuddy",
+    "publications",
+    "subscriptions",
+    "agents"
   ],
   "license": "MIT",
   "author": {
@@ -14,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/telegraphic-dev/n8n-giga-mango.git"
+    "url": "git+https://github.com/telegraphic-dev/n8n-nodes-giga-mango.git"
   },
   "main": "index.js",
   "scripts": {
     "build": "npx tsc && npm run copy-icons",
-    "copy-icons": "cp nodes/Agorapulse/*.svg dist/nodes/Agorapulse/ 2>/dev/null || true",
+    "copy-icons": "cp nodes/Agorapulse/*.svg dist/nodes/Agorapulse/ 2>/dev/null || true && cp nodes/ClawBuddy/*.svg dist/nodes/ClawBuddy/ 2>/dev/null || true",
     "dev": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
@@ -29,10 +33,12 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/AgorapulseApi.credentials.js"
+      "dist/credentials/AgorapulseApi.credentials.js",
+      "dist/credentials/ClawBuddyApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Agorapulse/Agorapulse.node.js"
+      "dist/nodes/Agorapulse/Agorapulse.node.js",
+      "dist/nodes/ClawBuddy/ClawBuddy.node.js"
     ]
   },
   "devDependencies": {
